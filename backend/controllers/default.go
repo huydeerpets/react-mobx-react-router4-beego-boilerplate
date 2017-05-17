@@ -13,3 +13,16 @@ func (c *MainController) Get() {
 	c.Data["Email"] = "astaxie@gmail.com"
 	c.TplName = "index.tpl"
 }
+
+type UserController struct {
+	beego.Controller
+}
+
+type User struct {
+	Username string
+}
+
+func (c *UserController) Get() {
+	c.Data["json"] = &User{Username: "foo"}
+	c.ServeJSON()
+}

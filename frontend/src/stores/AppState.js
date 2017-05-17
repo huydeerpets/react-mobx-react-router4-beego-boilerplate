@@ -24,6 +24,8 @@ export default class AppState {
     )
     console.log(data)
     data.length > 0 ? this.setData(data) : this.setSingle(data)
+    let { user } = await axios.get('http://localhost:3000/user')
+    console.log(user)
   }
 
   @action setData(data) {
