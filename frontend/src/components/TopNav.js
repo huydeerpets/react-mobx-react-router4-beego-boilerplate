@@ -11,11 +11,6 @@ export default class TopNav extends Component {
     this.store = this.props.store.appState
   }
 
-  authenticate(e) {
-    if (e) e.preventDefault()
-    this.props.store.authenticate()
-  }
-
   render() {
     const { authenticated, authenticating } = this.store
     return (

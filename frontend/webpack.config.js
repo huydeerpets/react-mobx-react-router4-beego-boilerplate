@@ -20,7 +20,7 @@ module.exports = {
     historyApiFallback: true,
     disableHostCheck: true,
     proxy: {
-      '/user': {
+      '/api': {
         target: 'http://localhost:8080',
         secure: false
       }

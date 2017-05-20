@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "checkJs": true,
+        "jsx": "react",
+        "baseUrl": "src/main/javascript",
+        "noUnusedLocals": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "node",
+        "node_modules",
+        "target",
+        "dist",
+        "lib",
+        "db",
+        "src/main/java",
+        "src/main/resources",
+        "src/main/webapp",
+        "src/test/java",
+        "src/test/resources",
+        "src/test/webapp"
+    ]
+}

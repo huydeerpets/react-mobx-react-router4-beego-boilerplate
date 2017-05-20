@@ -132,6 +132,11 @@
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
+                &.beego {
+                    background: url(beego.jpg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
             }
             .boilerplate-item-content {
                 flex: 1;
