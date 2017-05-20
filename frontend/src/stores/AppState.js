@@ -19,7 +19,8 @@ export default class AppState {
     this.item = {}
     this.user = { username: 'anonymous' }
 
-    this.testval = 'Cobbled together by '
+    this.testval = 'Original cobbled together by '
+    this.enhanceval = 'enhanced with go backend support by '
   }
 
   async fetchData(pathname, id) {
@@ -32,14 +33,12 @@ export default class AppState {
 
   fetchUser() {
     axios.get('http://localhost:3000/api/user').then(res => {
-      console.log('fetched user: ', res.data)
       this.setUser(res.data || { username: 'anonymous' })
     })
   }
 
   @action setUser(user) {
     this.user = user
-    console.log('stored user: ', this.user)
     this.authenticated = this.user.username != 'anonymous'
   }
 
@@ -61,14 +60,12 @@ export default class AppState {
       'http://localhost:3000/api/auth/login',
       usernameAndPassword
     )
-    console.log('login: ', data)
     this.setUser(data)
     this.authenticating = false
   }
 
   @action async logout() {
     let { data } = await axios.post('http://localhost:3000/api/auth/logout', {})
-    console.log('logout: ', data)
     this.authenticated = !(data == 'ok')
   }
 }

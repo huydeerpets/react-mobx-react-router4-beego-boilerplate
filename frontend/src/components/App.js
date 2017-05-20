@@ -23,7 +23,8 @@ export default class App extends Component {
       authenticating,
       timeToRefresh,
       refreshToken,
-      testval
+      testval,
+      enhanceval
     } = this.store.appState
     return (
       <div className="wrapper">
@@ -68,6 +69,17 @@ export default class App extends Component {
           {' '}
           <a href="https://github.com/mhaagens" target="_blank">
             mhaagens
+          </a>
+          &nbsp;
+          {enhanceval}
+          <a href="https://twitter.com/torstenhein" target="_blank">
+            @torstenhein
+          </a>
+          &nbsp;
+          | github:
+          {' '}
+          <a href="https://github.com/tozzr" target="_blank">
+            tozzr
           </a>
         </footer>
       </div>

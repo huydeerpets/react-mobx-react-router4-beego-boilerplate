@@ -24,20 +24,27 @@ export default class Login extends Component {
   render() {
     return (
       <div className="page login">
+        <h1>login</h1>
         {!this.store.authenticated &&
           <form method="post" action="javascript:;">
-            <input
-              type="text"
-              name="username"
-              value={this.state.username}
-              onChange={this.setUsername}
-            />
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.setPassword}
-            />
+            <p>
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                value={this.state.username}
+                onChange={this.setUsername}
+              />
+            </p>
+            <p>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.setPassword}
+              />
+            </p>
             <button
               onClick={() => {
                 this.store.login(this.state)
@@ -45,9 +52,11 @@ export default class Login extends Component {
             >
               log me in
             </button>
+            <br /><br />
+            use: user & pass
           </form>}
-        {this.props.store.authenticated &&
-          !this.props.store.authenticating &&
+        {this.store.authenticated &&
+          !this.store.authenticating &&
           <Redirect to="/" />}
       </div>
     )
