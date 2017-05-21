@@ -1,5 +1,6 @@
 import { observable, action, extendObservable } from 'mobx'
 import axios from 'axios'
+import { API_URL } from '../utils/constants'
 
 export default class AppState {
   @observable toLogin
@@ -32,7 +33,7 @@ export default class AppState {
   }
 
   fetchUser() {
-    axios.get('http://localhost:3000/api/user').then(res => {
+    axios.get(`${API_URL}/api/user`).then(res => {
       this.setUser(res.data || { username: 'anonymous' })
     })
   }
@@ -57,7 +58,7 @@ export default class AppState {
 
   @action async login(usernameAndPassword) {
     let { data } = await axios.post(
-      'http://localhost:3000/api/auth/login',
+      `${API_URL}/api/auth/login`,
       usernameAndPassword
     )
     this.setUser(data)
@@ -65,7 +66,7 @@ export default class AppState {
   }
 
   @action async logout() {
-    let { data } = await axios.post('http://localhost:3000/api/auth/logout', {})
+    let { data } = await axios.post(`${API_URL}/api/auth/logout`, {})
     this.authenticated = !(data == 'ok')
   }
 }

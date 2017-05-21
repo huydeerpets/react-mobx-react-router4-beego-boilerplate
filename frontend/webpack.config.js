@@ -13,7 +13,7 @@ module.exports = {
   ],
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, '../backend/static'),
+    contentBase: path.resolve(__dirname, './dist'),
     port: 3000,
     host: '0.0.0.0',
     publicPath: '/',
@@ -27,7 +27,7 @@ module.exports = {
     }
   },
   output: {
-    path: path.join(__dirname, '../backend/static'),
+    path: path.join(__dirname, './dist'),
     publicPath: '/',
     filename: 'app.[hash].js'
   },

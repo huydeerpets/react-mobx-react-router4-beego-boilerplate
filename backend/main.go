@@ -7,5 +7,7 @@ import (
 )
 
 func main() {
+	beego.SetStaticPath("/assets", "../frontend/dist/assets")
+	beego.BConfig.WebConfig.ViewsPath = "../frontend/dist"
 	beego.Run()
 }
